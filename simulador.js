@@ -57,26 +57,26 @@ while ( bienvenida != "salir"){
 
         if ( nft == 1 || nft == 2 || nft == 3 || nft == 4 ){
             let cantidad = parseInt(prompt("Ingresa la cantidad de NFTs que deseas mintear, el maximo son 10."));
-                if (cantidad <= 10){
+            if (cantidad <= 10){
                 let precio_final = ( calcular_precio() * cantidad );
                 console.log("El precio total a pagar por tus NFTs es: ", precio_final);
                 console.log( "Gracias por tu visita");
                 alert ("Gracias por tu compra");
-                }
-                else{
-                    alert ("cantidad no permitida");
-                    console.log( "Gracias por tu visita");
-                }
+            }
+            else{
+                alert ("cantidad no permitida");
+                console.log( "Gracias por tu visita");
+            }
         }
         else{
             alert ("NFT no encontrado");
             console.log( "Gracias por tu visita");
         }
 
-        }
-        else{
+    }
+    else{
             console.log( "Error ingrese aceptar o salir.");
-        }
+    }
 
 /* Reinicio */
         bienvenida = prompt("Bienvenido para continuar ingresa: aceptar, Para salir ingresa: salir");
