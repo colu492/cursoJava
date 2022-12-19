@@ -144,7 +144,7 @@ while ( bienvenida != "salir"){
     else{
             console.log( "Error ingrese aceptar o salir.");
     }
-/* Reinicio */
+/* Reinicio */ 
         bienvenida = prompt("Bienvenido para continuar ingresa: aceptar, Para salir ingresa: salir, Para agregar ingresa: agregar");
 }
 
