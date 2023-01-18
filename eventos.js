@@ -1,4 +1,3 @@
-
 /* En esta entrega agregue lo que es la estructura final del html con sus estilos correspondientes, me queda pendiente hacer que la funcion comprar ande*/
 
 
@@ -40,24 +39,19 @@ function add_carrito(e){
         img: nft_img,
     };
 
-
     carrito.push(nft);
 
     let carrito_JSON = JSON.stringify(carrito);
 
-    localStorage.setItem("carrito_de_compras" , carrito_JSON);
+    localStorage.setItem("carrito" , carrito_JSON);
 
-    let recuperar_carrito = localStorage.getItem("carrito_de_compras");
+    let recuperar_carrito = localStorage.getItem("carrito");
     
     console.log(recuperar_carrito);
 
     recuperar_carrito = JSON.parse(recuperar_carrito);
 
-    imp_carrito( nft );
-
 }
-
-/*  imprimir carrito y eliminar del carrito */
 
 let btn_agregar = document.querySelectorAll(".btn_agregar");
 
@@ -66,18 +60,38 @@ for( let boton of btn_agregar){
     boton.addEventListener("click" , add_carrito);
 }   
 
-function imp_carrito ( nft ){
 
-    let fila = document.createElement("tr");
-    fila.innerHTML = `<td><img src="${nft.img}"></td>
-                    <td>${nft.rareza}</td>
-                    <td>${nft.precio}</td>
-                    <td><button class="btn boton quitar">Quitar</button></td>`
-    
-    let tabla = document.getElementById("tbody");
-    tabla.append( fila );
 
-    let btn_quitar = document.querySelectorAll(".quitar");
+let btn_carrito = document.getElementById("btn_carrito");
+let contenedor_carrito = document.getElementById("carrito");
+
+btn_carrito.addEventListener("click" , () => {
+
+    let carrito = localStorage.getItem("carrito");
+    carrito = JSON.parse(carrito);
+
+
+    let items_carrito = document.createElement("div");
+    items_carrito.className = "elementos_carrito";
+    items_carrito.innerHTML = `<h2 class="carrito_titulo">Carrito</h2>
+                                    <button id="btn_cerrar" class="btn btn-primary boton">Cerrar</button>
+    `;
+    contenedor_carrito.append(items_carrito);
+
+
+    carrito.forEach((nft) => {
+        let contenedor_items = document.createElement("div");
+        contenedor_items.className = "contenedor_items";
+        contenedor_items.innerHTML = `<img src="${nft.img}">
+        <h3>${nft.rareza}</h3>
+        <p>${nft.precio} ETH</p>
+        <button class="btn boton quitar">Quitar</button>
+        `;
+        items_carrito.append(contenedor_items);
+
+        })
+
+        let btn_quitar = document.querySelectorAll(".quitar");
 
     for ( let boton of btn_quitar){
 
@@ -86,32 +100,19 @@ function imp_carrito ( nft ){
 
     function quitar_nft(e){
 
-        let abuelo = e.target.parentNode.parentNode;
-        abuelo.remove();
+        let padre = e.target.parentNode;
+        padre.remove();
     }
-}
+    let btn_cerrar = document.getElementById("btn_cerrar");
 
-/*  Funcion para ocultar y mostrar el carrito */
+    btn_cerrar.addEventListener("click" , () =>{
 
-let btn_carrito = document.getElementById("btn_carrito");
+            items_carrito.style.display = "none";
 
-btn_carrito.addEventListener("click" , mostrar_carrito);
+    })
 
-function mostrar_carrito(){
 
-    let get_carrito = document.getElementById("carrito");
-
-    if (get_carrito.style.display != "none"){
-
-        get_carrito.style.display = "none";
-    }
-    else{
-        get_carrito.style.display = "block";
-
-    }
-
-}
-
+});
 
 
 
