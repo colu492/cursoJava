@@ -1,4 +1,6 @@
 
+/** construccion del carrito **/
+
 let imprimir_carrito = () => {
 
     contenedor_carrito.innerHTML = "";

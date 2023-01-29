@@ -1,3 +1,5 @@
+/** Proyecto final con algunos fallos por resolver, la idea general esta planteada aca obviamente falta pulir un monton pero no llegue con el tiempo.**/
+
 let nft_card = document.getElementById("nft_card");
 let btn_carrito = document.getElementById("btn_carrito");
 let contenedor_carrito = document.getElementById("carrito");
