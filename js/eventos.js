@@ -78,6 +78,12 @@ btn_carrito.addEventListener("click" , () => {
     `;
     contenedor_carrito.append(items_carrito);
 
+    let btn_cerrar = document.getElementById("btn_cerrar");
+
+    btn_cerrar.addEventListener("click" , () =>{
+
+            items_carrito.style.display != "none" ? items_carrito.style.display = "none" : items_carrito.style.display = "none"; 
+        })
 
     carrito.forEach((nft) => {
         let contenedor_items = document.createElement("div");
@@ -103,13 +109,9 @@ btn_carrito.addEventListener("click" , () => {
         let padre = e.target.parentNode;
         padre.remove();
     }
-    let btn_cerrar = document.getElementById("btn_cerrar");
+    
 
-    btn_cerrar.addEventListener("click" , () =>{
 
-            items_carrito.style.display = "none";
-
-    })
 
 
 });
@@ -123,3 +125,14 @@ function calcular_precio(){
 
     
 }
+
+
+
+/** btn_quitar = document.createElement("button");
+btn_quitar.className = "btn boton quitar";
+btn_quitar.innerText = "Eliminar";
+btn_quitar.addEventListener("click", () =>{
+
+    let padre = e.target.parentNode;
+padre.remove();
+}) **/

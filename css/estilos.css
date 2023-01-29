@@ -45,6 +45,7 @@ nav ul li a:hover{
     color: #00ee00;
 }
 
+
 #btn_carrito{
     width: 90px;
     padding: 5px;
@@ -56,7 +57,9 @@ nav ul li a:hover{
 #btn_carrito:hover{
     background-color: #4d0133;
 }
-
+.btn_cerrar:hover{
+    color: #ffffff;
+}
 .titulo{
     display: flex;
     justify-content: center;
@@ -66,13 +69,25 @@ nav ul li a:hover{
     padding-top: 180px;
 }
 .contenedor_opciones{
+    width: 1200px;
     margin-top: 50px;
     width: 1200px;
     display: flex;
+    flex-wrap: nowrap;
     justify-content: space-evenly;
+    flex-direction: row;
 }
 .contenedor_rarezas{
-    width: 600px;
+    width: 400px;
+    margin: auto;
+    display: grid;
+    padding-bottom: 20px;
+}
+
+#nft_card{
+    width: 900px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .card{
@@ -82,6 +97,9 @@ nav ul li a:hover{
 }
 .card p{
     font-weight: 600;
+}
+.card-body{
+    margin: auto;
 }
 
 .card_img{
@@ -112,17 +130,17 @@ nav ul li a:hover{
     font-weight: 600;
 }
 .elementos_carrito{
-    width: 80%;
-    margin:0 10%;
-    max-height: 88vh;
+    width: 900px;
+    margin:auto;
     color: #ffffff;
-    background-color: #4d0133;
+    background-color: #29011b;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: fixed;
     z-index: 100;
-    top: 12vh;
+    top: 150px;
+    right: 0px;
     scrollbar-color: none;
 }
 .contenedor_items{
@@ -132,6 +150,11 @@ nav ul li a:hover{
     justify-content: space-between;
     align-items: center;
 }
+.compra_total{
+    padding: 50px;
+    font-weight: 900;
+    font-size: 20px;
+}
 .boton{
     background-color: #00ee00;
     font-weight: 600;
@@ -139,6 +162,19 @@ nav ul li a:hover{
     border: none;
 }
 .boton:hover{
+    background-color: #4d0133;
+    border: none;
+}
+.btn_agregar{
+    color: #4d0133;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.btn_agregar:hover{
+    color: #ffffff;
     background-color: #4d0133;
     border: none;
 }
@@ -154,4 +190,12 @@ nav ul li a:hover{
 
 #btn_comprar:hover{
     background-color: #4d0133;
+}
+
+.clima{
+    background-color: #29011b;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 20px;
+    padding-left: 400px;
 }
